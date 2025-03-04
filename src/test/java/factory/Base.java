@@ -104,11 +104,10 @@ public static WebDriver getDriver() {
 		return driver;
 	}
 
-public static Properties getProperties() throws IOException
-{		 
-    FileReader file=new FileReader(System.getProperty("user.dir")+"/src/test/resources/config.properties");
-   	p=new Properties();
-	p.load(file);
-	return p;
+public static Properties getProperties() throws IOException {
+    FileReader reader = new FileReader(System.getProperty("user.dir") + "/src/test/resources/config.properties"); // This will work on both Windows & Linux
+    p = new Properties();
+    p.load(reader);
+    return p;
 }
 }

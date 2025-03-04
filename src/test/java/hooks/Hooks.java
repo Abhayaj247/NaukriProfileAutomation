@@ -28,8 +28,9 @@ public class Hooks {
 	}
 	
 	@After
-	public void teardown()
-	{
-	 driver.quit();	
+	public void teardown() {
+	    if (driver != null) {
+	        driver.quit(); // This will prevent NullPointerException
+	    }
 	}
 }
